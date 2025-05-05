@@ -38,8 +38,7 @@ It's aimed to be a **real-world app interface** with clean structure and animate
 | Package             | Purpose                           |
 |---------------------|-----------------------------------|
 | `react`             | Core framework                    |
-| `react-dom`         | Render React in the browser       |
-| `react-router-dom`  | Page routing                      |
+| `react-router`      | Page routing                      |
 | `firebase`          | Authentication & backend services |
 | `tailwindcss`       | Utility-first CSS framework       |
 | `daisyui`           | Tailwind-based component library  |
