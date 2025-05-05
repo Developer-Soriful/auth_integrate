@@ -1,0 +1,118 @@
+[
+  {
+    "id": "1",
+    "name": "Programming Hero",
+    "developer": "Programming Hero Ltd.",
+    "thumbnail": "https://images.unsplash.com/photo-1649180556628-9ba704115795?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "banner": "https://plus.unsplash.com/premium_photo-1664304160128-ca5a08ac46ce?q=80&w=2053&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "downloads": 3500000,
+    "category": "Education",
+    "rating": 4.8,
+    "highlighted_rating": true,
+    "description": "Programming Hero is a fun and interactive way to learn programming. Whether you're a beginner or looking to brush up your skills, this app makes learning to code exciting and practical. The app uses gamified techniques, project-based learning, and interactive quizzes to make complex topics simple and enjoyable. It also offers mentorship, structured roadmaps, and challenges that help learners stay motivated and consistent throughout their coding journey.",
+    "features": [
+      "Interactive coding lessons",
+      "Real-world projects",
+      "Gamified learning experience"
+    ],
+    "reviews": [
+      {
+        "userName": "coder_nadia",
+        "rating": 5,
+        "comment": "Best app for beginners! The lessons are super easy to follow and engaging."
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "TaskMaster Pro",
+    "developer": "Productive Minds Inc.",
+    "thumbnail": "https://images.unsplash.com/photo-1651055693398-0d66969cf759?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "banner": "https://plus.unsplash.com/premium_photo-1729018715453-359f40b14ec8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "downloads": 1200000,
+    "category": "Productivity",
+    "rating": 4.9,
+    "highlighted_rating": true,
+    "description": "TaskMaster Pro helps you manage your daily tasks efficiently with reminders, categories, and analytics. It's designed to boost your productivity by organizing tasks into manageable lists, tracking your progress with insightful reports, and sending smart reminders to keep you on track. You can also prioritize tasks, collaborate with others, and build consistent routines with minimal distractions.",
+    "features": [
+      "Task reminders",
+      "Daily productivity insights",
+      "Custom categories"
+    ],
+    "reviews": [
+      {
+        "userName": "organized_oma",
+        "rating": 5,
+        "comment": "It changed how I manage my time!"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Word Battle",
+    "developer": "GameStreak Ltd.",
+    "thumbnail": "https://images.unsplash.com/photo-1607220522798-79bb00610e93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "banner": "https://images.unsplash.com/photo-1612798705568-61c14cdc5e40?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "downloads": 5000000,
+    "category": "Gaming",
+    "rating": 4.7,
+    "highlighted_rating": true,
+    "description": "Word Battle is an intense multiplayer word game where your vocabulary wins you battles. Players compete in real-time to form words under pressure, climb leaderboards, and earn exclusive rewards. With different difficulty levels, timed challenges, and global matchmaking, Word Battle offers a competitive environment that also sharpens your language skills in a thrilling way.",
+    "features": [
+      "Online PvP word battles",
+      "Leaderboard and rewards",
+      "Custom word challenges"
+    ],
+    "reviews": [
+      {
+        "userName": "gamer_john",
+        "rating": 5,
+        "comment": "Super addictive and fun!"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Focus Zen",
+    "developer": "ZenWorks",
+    "thumbnail": "https://plus.unsplash.com/premium_photo-1669075651770-8f5d88f8b452?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "banner": "https://images.unsplash.com/photo-1725189370192-f08430f6928b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "downloads": 800000,
+    "category": "Productivity",
+    "rating": 4.5,
+    "highlighted_rating": false,
+    "description": "A minimalistic app that uses Pomodoro and mindfulness techniques to improve your focus. Focus Zen blends time management and mental wellness by guiding userNames through focused work sessions, short breaks, and calming soundscapes. It's perfect for professionals, students, or anyone looking to improve their attention span and reduce burnout with a peaceful digital companion.",
+    "features": ["Pomodoro timer", "Focus sounds", "Daily focus reports"],
+    "reviews": [
+      {
+        "userName": "focus_buddy",
+        "rating": 4,
+        "comment": "Very calming UI, helps a lot when working!"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "CodeLab Kids",
+    "developer": "Tiny Coders Ltd.",
+    "thumbnail": "https://plus.unsplash.com/premium_photo-1668902223937-4bc3cf80b2a5?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "banner": "https://plus.unsplash.com/premium_photo-1666739032226-63f36dbe95d3?q=80&w=2079&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "downloads": 950000,
+    "category": "Education",
+    "rating": 4.6,
+    "highlighted_rating": true,
+    "description": "An educational coding platform for kids to learn logic, loops, and creativity. CodeLab Kids makes programming fun through visual code blocks, storytelling, and age-appropriate challenges. It supports parent monitoring tools, offers rewarding activities, and fosters problem-solving habits at an early stage. Great for building foundational tech skills in children through guided, interactive learning.",
+    "features": [
+      "Kid-friendly lessons",
+      "Visual code blocks",
+      "Parent dashboard"
+    ],
+    "reviews": [
+      {
+        "userName": "mommy_dev",
+        "rating": 5,
+        "comment": "Perfect starter app for kids!"
+      }
+    ]
+  }
+]
