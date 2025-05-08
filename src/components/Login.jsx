@@ -59,6 +59,7 @@ const Login = () => {
               />
 
               <label className="label">Password</label>
+              {/* for password haha  */}
               <input
                 type="password"
                 name="password"
