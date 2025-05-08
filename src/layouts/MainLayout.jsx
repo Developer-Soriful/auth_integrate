@@ -5,8 +5,21 @@ import { Pagination } from "swiper/modules";
 import { Autoplay } from "swiper/modules";
 import { Outlet } from "react-router";
 import { Helmet } from "react-helmet-async";
+import { useEffect, useState } from "react";
 
 const MainLayout = () => {
+  const [apps, setApps] = useState([]);
+
+  useEffect(() => {
+    fetch("/app_data.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const filtered = data.filter(
+          (app) => app.category.toLowerCase() === "productivity"
+        );
+        setApps(filtered);
+      });
+  }, []);
   return (
     <div className="w-11/12 mx-auto">
       <Helmet>
@@ -55,6 +68,37 @@ const MainLayout = () => {
       >
         <Outlet />
       </main>
+
+      <div className="w-11/12 mx-auto py-12">
+        <h1 className="text-4xl font-bold text-center text-indigo-400 mb-10">
+          🚀 Boost Your Productivity
+        </h1>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {apps.map((app) => (
+            <div
+              key={app.id}
+              className="bg-gray-800 rounded-2xl shadow-xl p-6 hover:scale-105 transition-all duration-300 ease-in-out"
+            >
+              <img
+                src={app.image}
+                alt={app.name}
+                className="w-full h-40 object-cover rounded-xl mb-4"
+              />
+              <h2 className="text-xl font-semibold text-indigo-300 mb-1">
+                {app.name}
+              </h2>
+              <p className="text-gray-300 text-sm mb-3">{app.description}</p>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-indigo-400">⭐ {app.rating}</span>
+                <button className="bg-indigo-500 hover:bg-indigo-600 px-4 py-1 rounded-lg text-white text-sm">
+                  View
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

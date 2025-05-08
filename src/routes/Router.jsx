@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet-async";
+import About from "../components/About";
 
 export const router = createBrowserRouter([
   {
@@ -44,6 +45,7 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  { path: "/editorchoice", Component: About },
   {
     path: "/profile",
     Component: Profile,
