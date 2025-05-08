@@ -48,6 +48,7 @@ const Login = () => {
           <div className="card-body">
             <form onSubmit={handleSubmit} className="fieldset">
               <label className="label">Email</label>
+              {/* for email haha etai bastob */}
               <input
                 type="email"
                 name="email"
