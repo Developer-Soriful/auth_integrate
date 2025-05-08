@@ -70,6 +70,7 @@ const SignUp = () => {
                 placeholder="Enter your name"
               />
               <label className="label">Photo Url</label>
+              {/* this comment just for new commit  */}
               <input
                 type="text"
                 name="photoUrl"
