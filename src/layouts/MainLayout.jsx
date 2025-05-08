@@ -81,7 +81,7 @@ const MainLayout = () => {
               className="bg-gray-800 rounded-2xl shadow-xl p-6 hover:scale-105 transition-all duration-300 ease-in-out"
             >
               <img
-                src={app.image}
+                src={app.thumbnail}
                 alt={app.name}
                 className="w-full h-40 object-cover rounded-xl mb-4"
               />

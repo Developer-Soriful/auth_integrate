@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router";
 import { AuthContext } from "../auth/AuthContext";
 import { FaUserCircle } from "react-icons/fa";
 import { FaAppStoreIos } from "react-icons/fa";
+import { CiSquareInfo } from "react-icons/ci";
 
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
@@ -49,6 +50,14 @@ const Header = () => {
               {user?.displayName ? user.displayName : "No userName"}
             </span>
           </NavLink>
+          <NavLink
+            to={"/about"}
+            className={({ isActive }) =>
+              isActive ? "py-1 text-blue-500 border-b" : ""
+            }
+          >
+            <CiSquareInfo size={30} />
+          </NavLink>
         </div>
 
         <div>
@@ -92,6 +101,14 @@ const Header = () => {
           <span className="absolute  top-9 -right-6 text-center bg-red-500 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-xs hidden group-hover:flex justify-center items-center px-2 py-1 rounded">
             {user?.displayName ? user.displayName : "No userName"}
           </span>
+        </NavLink>
+        <NavLink
+          to={"/about"}
+          className={({ isActive }) =>
+            isActive ? "py-1 text-blue-500 border-b" : ""
+          }
+        >
+          <CiSquareInfo size={30} />
         </NavLink>
       </div>
     </div>
