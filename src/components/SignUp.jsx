@@ -78,6 +78,7 @@ const SignUp = () => {
                 placeholder="Pest photo"
               />
               <label className="label">Email</label>
+              {/* this comment just for commit  */}
               <input
                 type="email"
                 name="email"
