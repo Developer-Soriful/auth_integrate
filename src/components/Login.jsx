@@ -35,7 +35,15 @@ const Login = () => {
   // google Login
   const provider = new GoogleAuthProvider();
   const handleGoogleLogin = () => {
-    signInWithPopup(auth, provider);
+    signInWithPopup(auth, provider)
+      .then((res) => {
+        user(res.user);
+        setSuccess(true);
+      })
+      .catch((err) => {
+        setSuccess(false);
+        setError(err.message);
+      });
   };
   return (
     <div>
