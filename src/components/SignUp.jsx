@@ -16,7 +16,7 @@ const SignUp = () => {
   const handleShowBtn = () => {
     setShow(!show);
   };
-  // this function for handle submit 
+  // this function for handle submit
   const handleSubmit = (e) => {
     e.preventDefault();
     const name = e.target.Name.value;
@@ -24,8 +24,8 @@ const SignUp = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    const isStrong = () =>
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/.test();
+    const isStrong = (password) =>
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/.test(password);
     if (!isStrong(password)) {
       setError(
         "Password must be at least 6 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character."
@@ -36,9 +36,11 @@ const SignUp = () => {
       .then((result) => {
         setUser(result.user);
         setSuccess("Sign Up Successful");
+        setError(null);
       })
       .catch((err) => {
         setError(err.message);
+        setSuccess(null);
       });
   };
 
@@ -54,7 +56,7 @@ const SignUp = () => {
         style={{
           minHeight: "calc(100vh - 236px)",
         }}
-        className="w-11/12 mx-auto flex flex-col gap-8 justify-center items-center"
+        className="w-11/12 mx-auto flex flex-col gap-8 justify-center items-center mt-10"
       >
         <h1 className="font-semibold text-3xl text-center">SignUp here</h1>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -64,38 +66,40 @@ const SignUp = () => {
               <input
                 type="text"
                 name="Name"
-                className="input"
+                className="input focus:outline-none"
                 placeholder="Enter your name"
               />
               <label className="label">Photo Url</label>
               <input
                 type="text"
                 name="photoUrl"
-                className="input"
+                className="input focus:outline-none"
                 placeholder="Pest photo"
               />
               <label className="label">Email</label>
               <input
                 type="email"
                 name="email"
-                className="input"
+                className="input focus:outline-none"
                 placeholder="Email"
+                required
               />
-              <label className="label">
-                <span>Password</span>
+              <label className="label flex flex-col items-start relative">
+                <label htmlFor="">Password</label>
                 <input
-                  type="password"
+                  type={`${show ? "text" : "password"}`}
                   name="password"
-                  className="input"
+                  className="input focus:outline-none"
                   placeholder="Password"
+                  required
                 />
-                <span onClick={handleShowBtn}>
+                <span
+                  className="absolute right-8 top-9.5 z-10"
+                  onClick={handleShowBtn}
+                >
                   {show ? <FaEyeSlash /> : <FaEye />}
                 </span>
               </label>
-              <div>
-                <a className="link link-hover">Forgot password?</a>
-              </div>
               <button type="submit" className="btn btn-neutral mt-4">
                 Sign Up
               </button>

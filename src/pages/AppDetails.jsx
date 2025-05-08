@@ -30,7 +30,6 @@ const AppDetails = () => {
       setReview(true);
     }
   };
-  console.log(!install);
 
   const {
     name,
@@ -172,7 +171,7 @@ const AppDetails = () => {
               <h1 className="text-2xl my-4">About this app</h1>
               <p className="my-4 text-gray-300 ">{description}</p>
             </div>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center gap-10">
               <div>
                 <h1 className="text-2xl my-4">Rating this app</h1>
                 <p>Tell others what you think.</p>

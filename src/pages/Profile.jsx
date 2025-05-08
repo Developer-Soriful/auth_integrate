@@ -29,7 +29,6 @@ const Profile = () => {
         user.reload();
       }, 1000);
     } catch (error) {
-      console.error("Profile update failed:", error);
       setMessage("Failed to update profile.");
     }
   };
@@ -44,7 +43,7 @@ const Profile = () => {
       </header>
 
       <main
-        className="flex justify-center items-center"
+        className="flex justify-center items-center mx-2"
         style={{
           minHeight: "calc(100vh - 236px)",
         }}

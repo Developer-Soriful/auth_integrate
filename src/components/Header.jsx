@@ -45,7 +45,7 @@ const Header = () => {
               <FaUserCircle size={30} />
             )}
 
-            <span className="absolute top-9 -right-4.5 text-center bg-red-500 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-xs hidden group-hover:flex justify-center items-center px-2 py-1 rounded">
+            <span className="absolute top-9 -right-2 text-center bg-red-500 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-xs hidden group-hover:flex justify-center items-center px-2 py-1 rounded">
               {user?.displayName ? user.displayName : "No userName"}
             </span>
           </NavLink>
@@ -89,7 +89,7 @@ const Header = () => {
             <FaUserCircle size={30} />
           )}
 
-          <span className="absolute top-9 -right-4.5 text-center bg-red-500 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-xs hidden group-hover:flex justify-center items-center px-2 py-1 rounded">
+          <span className="absolute  top-9 -right-3 text-center bg-red-500 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-xs hidden group-hover:flex justify-center items-center px-2 py-1 rounded">
             {user?.displayName ? user.displayName : "No userName"}
           </span>
         </NavLink>

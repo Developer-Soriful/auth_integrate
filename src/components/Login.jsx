@@ -6,11 +6,13 @@ import { Link, Navigate } from "react-router";
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
-  const { signIn, setUser, user } = useContext(AuthContext);
+  const { signIn, setUser, handleForgetPassword } = useContext(AuthContext);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+  const [email, setEmail] = useState(null);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
     const password = e.target.password.value;
 
     signIn(email, password)
@@ -19,15 +21,19 @@ const Login = () => {
         setSuccess(true);
       })
       .catch((err) => {
-        console.log(err.message);
         setSuccess(false);
+        setError(err.message);
       });
+  };
+  // handle forget password
+  const handleForget = () => {
+    handleForgetPassword(email);
   };
   return (
     <div>
-        <Helmet>
+      <Helmet>
         <title>LogIn || page</title>
-        </Helmet>
+      </Helmet>
       <header className="w-11/12 mx-auto">
         <Header></Header>
       </header>
@@ -35,7 +41,7 @@ const Login = () => {
         style={{
           minHeight: "calc(100vh - 236px)",
         }}
-        className="w-11/12 mx-auto flex flex-col gap-8 justify-center items-center"
+        className="w-11/12 mx-auto flex flex-col gap-8 justify-center items-center mt-10"
       >
         <h1 className="font-semibold text-3xl text-center">Login here</h1>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -47,23 +53,28 @@ const Login = () => {
                 name="email"
                 className="input"
                 placeholder="Email"
+                required
+                onChange={(e) => setEmail(e.target.value)}
               />
+
               <label className="label">Password</label>
               <input
                 type="password"
                 name="password"
                 className="input"
                 placeholder="Password"
+                required
               />
               <div>
-                <a className="link link-hover">Forgot password?</a>
+                <a onClick={handleForget} className="link link-hover">
+                  Forgot password?
+                </a>
               </div>
               <button type="submit" className="btn btn-neutral mt-4">
                 Login
               </button>
-              {success && (
-                 <Navigate to={"/"}/>
-              )}
+              {success && <Navigate to={"/"} />}
+              {error && <p className="text-red-500">{error}</p>}
               <p className="text-center mt-4 text-md">
                 Already have an account?{" "}
                 <Link className="text-blue-500 text-lg" to={"/signUp"}>

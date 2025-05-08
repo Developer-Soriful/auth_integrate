@@ -14,7 +14,7 @@ const Root = () => {
       </div>
     );
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 overflow-x-hidden">
       <Helmet>
         <title>Home || page</title>
       </Helmet>
