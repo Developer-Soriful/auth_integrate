@@ -21,6 +21,7 @@ const AppDetails = () => {
   const [allReviews, setAllReviews] = useState([]);
   const [install, setInstall] = useState(false);
   const [review, setReview] = useState(false);
+  const [starRating, setStarRating] = useState(0);
   const detailsData = useLoaderData();
   const detailFind = detailsData.find((app) => app.id == id);
   // this function for handle install button
@@ -29,6 +30,10 @@ const AppDetails = () => {
     if (!install) {
       setReview(true);
     }
+  };
+  // this section for rating
+  const handleRating = (rating) => {
+    setStarRating(rating);
   };
 
   const {
@@ -53,8 +58,10 @@ const AppDetails = () => {
       photo: user.photoURL,
       rating: 5,
       comment: comment,
+      rating: starRating,
     };
     setAllReviews([...allReviews, newReview]);
+    setStarRating(0);
   };
   return (
     <div className="w-11/12 mx-auto">
@@ -233,6 +240,23 @@ const AppDetails = () => {
                     <span>{user.displayName} </span>
                   </div>
                 </div>
+                <div>
+                  <div className="flex gap-2 text-yellow-400 text-2xl cursor-pointer">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <span
+                        key={star}
+                        onClick={() => handleRating(star)}
+                        className={
+                          star <= starRating
+                            ? "text-yellow-400"
+                            : "text-gray-400"
+                        }
+                      >
+                        ★
+                      </span>
+                    ))}
+                  </div>
+                </div>
                 <div className="flex flex-col w-full">
                   <label className="text-sm ">Comment Below</label>
                   <textarea
@@ -299,6 +323,7 @@ const AppDetails = () => {
                     </div>
                   </div>
                   <div>
+                    {/* ekane star gula aktar por akta dekao */}
                     <p>{review.rating} ⭐</p>
                     <p className="text-gray-400">{review.comment}</p>
                   </div>

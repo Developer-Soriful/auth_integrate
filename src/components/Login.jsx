@@ -4,6 +4,9 @@ import Footer from "./Footer";
 import { AuthContext } from "../auth/AuthContext";
 import { Link, Navigate } from "react-router";
 import { Helmet } from "react-helmet-async";
+import { GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup } from "firebase/auth";
+import { auth } from "../auth/firebase";
 
 const Login = () => {
   const { signIn, setUser, handleForgetPassword } = useContext(AuthContext);
@@ -29,6 +32,11 @@ const Login = () => {
   const handleForget = () => {
     handleForgetPassword(email);
   };
+  // google Login
+  const provider = new GoogleAuthProvider();
+  const handleGoogleLogin = () => {
+    signInWithPopup(auth, provider);
+  };
   return (
     <div>
       <Helmet>
@@ -47,6 +55,15 @@ const Login = () => {
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <div className="card-body">
             <form onSubmit={handleSubmit} className="fieldset">
+              <div className="mx-auto">
+                <p
+                  onClick={handleGoogleLogin}
+                  className="btn btn-outline btn-primary "
+                >
+                  Google Login
+                </p>
+              </div>
+
               <label className="label">Email</label>
               {/* for email haha etai bastob */}
               <input
