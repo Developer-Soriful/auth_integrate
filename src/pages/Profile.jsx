@@ -3,13 +3,19 @@ import { AuthContext } from "../auth/AuthContext";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
 
 const Profile = () => {
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
   const [name, setName] = useState(user?.displayName || "");
   const [photo, setPhoto] = useState(user?.photoURL || "");
   const [message, setMessage] = useState("");
-
+  if (loading)
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <span className="loading loading-bars loading-xl"></span>
+      </div>
+    );
   const handleUpdate = async () => {
     try {
       await updateProfile(user, {
@@ -30,6 +36,9 @@ const Profile = () => {
 
   return (
     <div className="flex flex-col">
+      <Helmet>
+        <title>Profile || page</title>
+      </Helmet>
       <header className="w-11/12 mx-auto">
         <Header />
       </header>

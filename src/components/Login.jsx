@@ -3,6 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { AuthContext } from "../auth/AuthContext";
 import { Link, Navigate } from "react-router";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { signIn, setUser, user } = useContext(AuthContext);
@@ -24,6 +25,9 @@ const Login = () => {
   };
   return (
     <div>
+        <Helmet>
+        <title>LogIn || page</title>
+        </Helmet>
       <header className="w-11/12 mx-auto">
         <Header></Header>
       </header>

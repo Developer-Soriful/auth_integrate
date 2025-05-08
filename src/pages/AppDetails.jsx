@@ -13,13 +13,25 @@ import { FaUserCircle } from "react-icons/fa";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { useContext, useState } from "react";
 import { AuthContext } from "../auth/AuthContext";
+import { Helmet } from "react-helmet-async";
 
 const AppDetails = () => {
   const { user } = useContext(AuthContext);
   const { id } = useParams();
   const [allReviews, setAllReviews] = useState([]);
+  const [install, setInstall] = useState(false);
+  const [review, setReview] = useState(false);
   const detailsData = useLoaderData();
   const detailFind = detailsData.find((app) => app.id == id);
+  // this function for handle install button
+  const handleInstallBtn = () => {
+    setInstall(!install);
+    if (!install) {
+      setReview(true);
+    }
+  };
+  console.log(!install);
+
   const {
     name,
     developer,
@@ -47,6 +59,9 @@ const AppDetails = () => {
   };
   return (
     <div className="w-11/12 mx-auto">
+      <Helmet>
+        <title>Apps || page {id}</title>
+      </Helmet>
       <header>
         <Header />
       </header>
@@ -87,8 +102,15 @@ const AppDetails = () => {
             </div>
 
             <div className="flex gap-4 flex-wrap">
-              <button className="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-lg font-semibold w-full md:w-1/4">
-                Install
+              <button
+                onClick={handleInstallBtn}
+                className={`${
+                  install
+                    ? "bg-red-600 hover:bg-red-700"
+                    : "bg-green-500 hover:bg-green-600"
+                } text-white px-5 py-2 rounded-lg font-semibold w-full md:w-1/4`}
+              >
+                {install ? "Uninstall" : "Install"}
               </button>
             </div>
 
@@ -170,7 +192,12 @@ const AppDetails = () => {
                   onClick={() =>
                     document.getElementById("my_modal_3").showModal()
                   }
-                  className="my-4 bg-gray-800 px-6 py-4 rounded-md hover:bg-gray-700"
+                  disabled={!review}
+                  className={`my-4 px-6 py-4 rounded-md text-white transition-colors duration-300 ${
+                    review
+                      ? "bg-gray-800 hover:bg-gray-700 cursor-pointer"
+                      : "bg-gray-500 cursor-not-allowed"
+                  }`}
                 >
                   Write a review
                 </button>

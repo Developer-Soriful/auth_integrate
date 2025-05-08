@@ -4,10 +4,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import { Autoplay } from "swiper/modules";
 import { Outlet } from "react-router";
+import { Helmet } from "react-helmet-async";
 
 const MainLayout = () => {
   return (
     <div className="w-11/12 mx-auto">
+      <Helmet>
+        <title>Main Layout || page</title>
+      </Helmet>
       <div className="slider ">
         <Swiper
           loop={true}

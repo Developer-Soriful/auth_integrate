@@ -4,6 +4,7 @@ import TradingApps from "./TradingApps";
 import ProductivityApp from "./ProductivityApp";
 import GamingApp from "./GamingApp";
 import EducationApp from "./EducationApp";
+import { Helmet } from "react-helmet-async";
 
 const Apps = () => {
   const apps = useLoaderData();
@@ -13,6 +14,9 @@ const Apps = () => {
   const educationApp = apps.filter((app) => app.category === "Education");
   return (
     <div className="my-6">
+      <Helmet>
+        <title>Apps || page</title>
+      </Helmet>
       <h1 className="text-2xl my-6">Top rating</h1>
       <div className="tradingApps grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {tradingApps.map((app, index) => (

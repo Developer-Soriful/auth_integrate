@@ -3,16 +3,35 @@ import Footer from "./Footer";
 import { Link } from "react-router";
 import { useContext, useState } from "react";
 import { AuthContext } from "../auth/AuthContext";
+import { Helmet } from "react-helmet-async";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
+
 const SignUp = () => {
   const { createUser, setUser, user } = useContext(AuthContext);
   const [success, setSuccess] = useState(null);
   const [error, setError] = useState(null);
+  const [show, setShow] = useState(false);
+  // this function for handle show password
+  const handleShowBtn = () => {
+    setShow(!show);
+  };
+  // this function for handle submit 
   const handleSubmit = (e) => {
     e.preventDefault();
     const name = e.target.Name.value;
     const photoUrl = e.target.photoUrl.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+
+    const isStrong = () =>
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/.test();
+    if (!isStrong(password)) {
+      setError(
+        "Password must be at least 6 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character."
+      );
+      return;
+    }
     createUser(name, photoUrl, email, password)
       .then((result) => {
         setUser(result.user);
@@ -22,8 +41,12 @@ const SignUp = () => {
         setError(err.message);
       });
   };
+
   return (
     <div>
+      <Helmet>
+        <title>Sign Up || page</title>
+      </Helmet>
       <header className="w-11/12 mx-auto">
         <Header></Header>
       </header>
@@ -58,13 +81,18 @@ const SignUp = () => {
                 className="input"
                 placeholder="Email"
               />
-              <label className="label">Password</label>
-              <input
-                type="password"
-                name="password"
-                className="input"
-                placeholder="Password"
-              />
+              <label className="label">
+                <span>Password</span>
+                <input
+                  type="password"
+                  name="password"
+                  className="input"
+                  placeholder="Password"
+                />
+                <span onClick={handleShowBtn}>
+                  {show ? <FaEyeSlash /> : <FaEye />}
+                </span>
+              </label>
               <div>
                 <a className="link link-hover">Forgot password?</a>
               </div>
